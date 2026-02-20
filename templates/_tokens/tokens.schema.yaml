@@ -1,0 +1,105 @@
+# tokens.schema.yaml — CSS Custom Properties contract for --fc-* tokens
+# All templates MUST consume these tokens. page-writer MUST generate them.
+
+description: |
+  Defines the required CSS custom properties that page-writer generates
+  and templates consume. All properties use the --fc- prefix.
+
+required_properties:
+  # Colors — Background
+  --fc-bg-primary:
+    type: color
+    description: Main page background
+    example: "#0d1117"
+  --fc-bg-secondary:
+    type: color
+    description: Secondary/section background
+    example: "#161b22"
+  --fc-bg-card:
+    type: color
+    description: Card/panel background
+    example: "#1c2130"
+
+  # Colors — Text
+  --fc-text-primary:
+    type: color
+    description: Primary text color
+    example: "#e6edf3"
+  --fc-text-secondary:
+    type: color
+    description: Secondary/subtitle text
+    example: "#8b949e"
+  --fc-text-muted:
+    type: color
+    description: Muted/caption text
+    example: "#484f58"
+
+  # Colors — Accent
+  --fc-accent:
+    type: color
+    description: Primary accent color
+    example: "#ea4b71"
+  --fc-accent-2:
+    type: color
+    description: Secondary accent color
+    example: "#3ddbd9"
+
+  # Colors — Border & Shadow
+  --fc-border:
+    type: color
+    description: Default border color
+    example: "rgba(255,255,255,0.08)"
+  --fc-shadow:
+    type: shadow
+    description: Default box shadow
+    example: "0 4px 24px rgba(0,0,0,0.3)"
+
+  # Typography
+  --fc-font-heading:
+    type: font-family
+    description: Heading font stack
+    example: "'Chakra Petch', sans-serif"
+  --fc-font-body:
+    type: font-family
+    description: Body text font stack
+    example: "'Manrope', sans-serif"
+  --fc-font-mono:
+    type: font-family
+    description: Monospace font stack
+    example: "'JetBrains Mono', monospace"
+
+  # Spacing
+  --fc-radius:
+    type: length
+    description: Default border radius
+    example: "18px"
+  --fc-space-sm:
+    type: length
+    description: Small spacing
+    example: "0.5rem"
+  --fc-space-md:
+    type: length
+    description: Medium spacing
+    example: "1rem"
+  --fc-space-lg:
+    type: length
+    description: Large spacing
+    example: "2rem"
+  --fc-space-xl:
+    type: length
+    description: Extra large spacing
+    example: "4rem"
+
+optional_properties:
+  --fc-accent-3:
+    type: color
+    description: Tertiary accent color
+  --fc-bg-hover:
+    type: color
+    description: Hover state background
+  --fc-gradient:
+    type: gradient
+    description: Accent gradient
+  --fc-glow:
+    type: shadow
+    description: Glow effect for interactive elements
