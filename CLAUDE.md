@@ -81,6 +81,7 @@ Phase 2 (design-profile.yaml 생성)는 Lead가 직접 수행합니다.
 | `/craft-design` | Phase 2만 실행 (Markdown → design-profile.yaml) |
 | `/craft-preview` | 로컬 빌드 + 서빙 |
 | `/craft-deploy` | 배포 (GitHub Pages / Vercel / Netlify) |
+| `/craft-sync` | 메인 포트폴리오(`dev/portfolio`)와 데이터 동기화 |
 
 ---
 
@@ -157,6 +158,37 @@ foliocraft/
 ├── references/                        ← 디자인 패턴 참조
 └── examples/                          ← 예시
 ```
+
+---
+
+## Portfolio Integration
+
+foliocraft로 생성된 사이트는 메인 포트폴리오(`/home/coffin/dev/portfolio`)와 연동됩니다.
+
+### 데이터 흐름
+
+```
+foliocraft                              portfolio
+workspace/{project}/                    src/data/
+├── content.json  ──→ /craft-sync ──→   ├── projects.ts  (PortfolioSite[])
+├── deploy.yaml   ──→             ──→   └── resume.ts    (mainProjects[].live)
+└── site/         ──→ 배포 URL
+```
+
+### 매핑 규칙
+
+| foliocraft (content.json) | portfolio (PortfolioSite) |
+|--------------------------|--------------------------|
+| `meta.title` | `title` |
+| `meta.tagline` | `desc` |
+| `tech_stack[].name` | `tech[]` |
+| `deploy.url` | `url` |
+| `deploy.status` | `status` |
+| `features[].title` (top 3) | `projects[]` |
+
+### deploy.yaml
+
+`/craft-deploy` 실행 후 자동 생성. `/craft-sync`가 이 파일을 읽어 portfolio를 업데이트합니다.
 
 ---
 

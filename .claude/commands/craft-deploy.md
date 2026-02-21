@@ -48,9 +48,17 @@ npx netlify deploy --prod --dir=dist
 
 ## Post-deploy
 
-- 배포 URL 출력
-- 브라우저에서 확인 안내
-- workspace에 배포 정보 기록
+1. 배포 URL 출력
+2. `workspace/{project}/deploy.yaml` 생성/업데이트:
+   ```yaml
+   project: n8n
+   url: https://tygwan.github.io/n8n/
+   target: github-pages
+   deployed_at: 2026-02-21T12:00:00Z
+   template: sveltekit-dashboard
+   status: production
+   ```
+3. **Portfolio 동기화 제안**: "Run `/craft-sync` to update your main portfolio?"
 
 ## Example
 

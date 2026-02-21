@@ -210,6 +210,7 @@ $ claude /craft /path/to/your-repo
 | `/craft-design <project>` | Phase 2만 — Markdown → design-profile.yaml |
 | `/craft-preview <project>` | 로컬 빌드 + 프리뷰 서버 |
 | `/craft-deploy <project> <target>` | 배포 (github-pages / vercel / netlify) |
+| `/craft-sync [project]` | 메인 포트폴리오와 데이터 동기화 |
 
 ---
 
@@ -236,7 +237,7 @@ foliocraft/
 ├── CLAUDE.md                      # Pipeline documentation (for agents)
 ├── .claude/
 │   ├── agents/                    # 5 agent definitions
-│   └── commands/                  # 5 slash commands
+│   └── commands/                  # 6 slash commands
 ├── design/
 │   ├── palettes/                  # 4 color palettes (YAML)
 │   ├── typography/                # 3 typography presets (YAML)
@@ -262,7 +263,7 @@ foliocraft/
 | | Count |
 |:--|------:|
 | AI Agents | **5** |
-| Slash Commands | **5** |
+| Slash Commands | **6** |
 | Template Stacks | **2** (+ 4 planned) |
 | Design Palettes | **4** |
 | Typography Presets | **3** |
@@ -276,9 +277,11 @@ foliocraft/
 
 - [x] Project scaffold + pipeline documentation
 - [x] Agent definitions (code-analyst, story-analyst, stack-detector, page-writer, figure-designer)
-- [x] Slash commands (craft, craft-analyze, craft-design, craft-preview, craft-deploy)
+- [x] Slash commands (craft, craft-analyze, craft-design, craft-preview, craft-deploy, craft-sync)
 - [x] Design presets (palettes, typography, layouts, domain profiles)
 - [x] Template skeletons (sveltekit-dashboard, astro-landing)
+- [x] Portfolio integration (`/craft-sync` → `dev/portfolio` data sync)
+- [x] Template stack versions aligned with GitHub ecosystem (Vite 7, vite-plugin-svelte 6)
 - [ ] Run `/craft-analyze` on n8n
 - [ ] Run `/craft-analyze` on DXTnavis
 - [ ] Component implementation (Hero, Section, Card, etc.)
